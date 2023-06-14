@@ -1,0 +1,24 @@
+<%- include('partials/header.ejs') %>
+
+<link rel="stylesheet" href="/css/users.css">
+
+</head>
+<body>
+
+    <%- include('partials/navigation.ejs') %>
+    <main class="main-body">
+        <h1>Users</h1>
+    <ul class="main-body__list">
+        <% if(users.length == 0) { %>
+            <li class="main-body__list-item">No Users Found</li>
+        <% } else {%>
+        <% for(let u of users) {%>
+        <li class="main-body__list-item"><a href="/user/<%= u.id %>"> <%= u.name %> </a></li>
+        <% } }%>
+    </ul> 
+    <form action="/users/add" class="main-body__form">
+        <button type="submit" class="main-body__button">Add</button>
+    </form>
+    </main>
+
+    <%- include('partials/footer.ejs') %>

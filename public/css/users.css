@@ -1,0 +1,49 @@
+
+.main-body {
+    text-align: center;
+    /* background-color:aquamarine; */
+}
+
+.main-body__list{
+    
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin:0;
+    padding:0;
+}
+
+.main-body__list-item a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: grey;
+}
+
+.main-body__list-item{
+    margin-bottom: 10px;;
+}
+
+.main-body__list-item a:hover{
+    color: black
+}
+.main-body__form{
+    
+    margin-top:4%;
+    height: 30px
+}
+.main-body__button{
+    font-size: larger;
+    background-color: #F96167;
+    color: white;
+    width:20%;
+    height: 40px;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main-body__button:hover{
+    background-color: #f63037;
+}
+
+
