@@ -11,22 +11,15 @@
             <p>Name:&nbsp;&nbsp;&nbsp; <%= user.name %></p>
             <p>Age:&nbsp;&nbsp;&nbsp; <%= user.age %></p>
         </div>
-        <form action="#" onsubmit="deletePost(event)" class="delete-user">
-            <button type="submit">Delete</button>
-        </form>
+        <div class="buttons">
+            <form action="/users/delete/<%= user.id %>"  class="delete-user" method="POST">
+                <button type="submit">Delete</button>
+            </form>
+            <form action="/users/edit/<%= user.id %>" class="update-user">
+                <button type="submit">Update</button>
+            </form>
+        </div>
     </div>
 </main>
-    <script>
-        const deletePost = (e) => {
-            e.preventDefault();
-            fetch('/user/<%= user.id %>', {
-                method: 'DELETE'
-            }).then(res => {
-                res.json()
-            }).then(res => {
-                window.location = "/users"
-            })
-        }
-    </script>
 
  <%- include('partials/footer.ejs') %>

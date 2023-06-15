@@ -13,11 +13,15 @@
     padding-top: 5%;
 }
 
-.delete-user button{
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.delete-user button, .update-user button{
     font: inherit;
     display:block;
-    width: 50%;
-    margin: auto;
+    width: 100%;
     background-color: #F96167;
     color: white;
     border: none;
@@ -25,3 +29,5 @@
     height: 40px;
     cursor: pointer;
 }
+
+

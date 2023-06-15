@@ -13,7 +13,7 @@
             <li class="main-body__list-item">No Users Found</li>
         <% } else {%>
         <% for(let u of users) {%>
-        <li class="main-body__list-item"><a href="/user/<%= u.id %>"> <%= u.name %> </a></li>
+        <li class="main-body__list-item"><a href="/users/<%= u.id %>"> <%= u.name %> </a></li>
         <% } }%>
     </ul> 
     <form action="/users/add" class="main-body__form">
