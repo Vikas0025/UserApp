@@ -1,33 +1,47 @@
-const db = require('../utils/db')
+const mongoose = require('mongoose');
 
-class User {
-    constructor(id, name, age){
-        this.id = id;
-        this.name = name;
-        this.age = age;
-    }
-    save(){
-        return db.execute('INSERT INTO users (id, name, age) VALUES (?, ?, ?) ', [this.id, this.name, this.age]); 
-    }
+const Schema = mongoose.Schema;
 
-    static updateUser(newUser){
-        const id = newUser.id
-        const newName = newUser.name
-        const newAge = newUser.age
-        return db.execute('UPDATE users SET name = ?, age = ? WHERE users.id = ?', [newName, newAge, id])
+const userSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    age: {
+        type: Number,
+        reuqired: true
     }
+})
+module.exports = mongoose.model('User', userSchema);
 
-    static deleteById(id) {
-        return db.execute('DELETE FROM users WHERE users.id = ?', [id])
-    }
+// class User {
+//     constructor(id, name, age){
+//         this.id = id;
+//         this.name = name;
+//         this.age = age;
+//     }
+//     save(){
+//         return db.execute('INSERT INTO users (id, name, age) VALUES (?, ?, ?) ', [this.id, this.name, this.age]); 
+//     }
 
-    static findById(id) {
-        return db.execute(`SELECT * FROM users WHERE users.id = ?`, [id])
-    }
+//     static updateUser(newUser){
+//         const id = newUser.id
+//         const newName = newUser.name
+//         const newAge = newUser.age
+//         return db.execute('UPDATE users SET name = ?, age = ? WHERE users.id = ?', [newName, newAge, id])
+//     }
 
-    static fetchAll(){
-        return db.execute('SELECT * FROM users')
-    }
-}
+//     static deleteById(id) {
+//         return db.execute('DELETE FROM users WHERE users.id = ?', [id])
+//     }
 
-module.exports = User
+//     static findById(id) {
+//         return db.execute(`SELECT * FROM users WHERE users.id = ?`, [id])
+//     }
+
+//     static fetchAll(){
+//         return db.execute('SELECT * FROM users')
+//     }
+// }
+
+// module.exports = User

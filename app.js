@@ -3,7 +3,9 @@ const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
 
+
 const userRouter = require('./routes/users.js')
+const mongoDBConnect = require('./utils/db.js').mongoDBConnect
 
 const app = express()
 
@@ -24,6 +26,12 @@ app.use('/', (req, res, next) => {
 } )
 
 
-app.listen(3000, () => {
-    console.log("Running...")
+mongoDBConnect().then(res => {
+
+    app.listen(3000, () => {
+        console.log("Running...")
+    })
+
+}).catch(err => {
+    console.log(err);
 })

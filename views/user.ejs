@@ -12,10 +12,10 @@
             <p>Age:&nbsp;&nbsp;&nbsp; <%= user.age %></p>
         </div>
         <div class="buttons">
-            <form action="/users/delete/<%= user.id %>"  class="delete-user" method="POST">
+            <form action="/users/delete/<%= user._id %>"  class="delete-user" method="POST">
                 <button type="submit">Delete</button>
             </form>
-            <form action="/users/edit/<%= user.id %>" class="update-user">
+            <form action="/users/edit/<%= user._id %>" class="update-user">
                 <button type="submit">Update</button>
             </form>
         </div>

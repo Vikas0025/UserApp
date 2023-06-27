@@ -12,7 +12,7 @@
         <input type="text" name="name" id="n" value="<%= edit ? user.name : '' %>"required>
         <label for="a">age</label>
         <input type="number" name="age" id="a" value="<%= edit ? user.age : '' %>"required> 
-        <input type="hidden" name="id" value="<%= user.id %>">
+        <input type="hidden" name="id" value="<%= user._id %>">
         </div>          
         <button type="submit"><%= edit ? 'Update' : 'Create' %></button>
     </form>

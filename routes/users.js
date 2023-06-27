@@ -5,7 +5,6 @@ const usersController = require('../controllers/users')
 
 router.get('/', usersController.displayUsers)
 
-
 router.get('/add', usersController.addUserForm)
 
 router.get('/edit/:id', usersController.editUserForm)

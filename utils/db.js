@@ -1,10 +1,9 @@
-const mysql = require('mysql2');
+const mongoose = require('mongoose');
 
-const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    database: 'user_app',
-    password: '123456789'
-})
 
-module.exports = pool.promise();
+const mongoDBConnect = () => {
+    return mongoose.connect('mongodb+srv://anukontyvikas:sdnubaoj7NrXu63O@cluster0.r9bwhn3.mongodb.net/?retryWrites=true&w=majority');
+}
+
+exports.mongoDBConnect = mongoDBConnect;
+
